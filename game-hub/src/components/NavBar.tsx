@@ -2,6 +2,7 @@ import { ColorModeButton } from "@/components/ui/color-mode";
 import { HStack, Image } from '@chakra-ui/react';
 import logo from "../assets/logo.webp";
 import ColorModeSwitch from "./ColorModeSwitch";
+
 const NavBar = () => {
     return (
         <HStack justifyContent="space-between">
@@ -11,7 +12,7 @@ const NavBar = () => {
                 <ColorModeSwitch />
             </HStack>
         </HStack >
-    )
-}
+    );
+};
 
-export default NavBar
+export default NavBar;

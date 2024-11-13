@@ -1,9 +1,8 @@
-import { Grid, GridItem, Stack } from "@chakra-ui/react"
-import GameGrid from "./components/GameGrid"
-import NavBar from "./components/NavBar"
+import { Grid, GridItem, Stack } from "@chakra-ui/react";
+import GameGrid from "./components/GameGrid";
+import NavBar from "./components/NavBar";
 
 function App() {
-
   return (
     <Grid templateAreas={{
       base: `"nav" " main"`,
@@ -21,7 +20,7 @@ function App() {
         <GameGrid />
       </GridItem>
     </Grid>
-  )
-}
+  );
+};
 
-export default App
+export default App;

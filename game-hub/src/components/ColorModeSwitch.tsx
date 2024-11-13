@@ -9,7 +9,7 @@ const ColorModeSwitch = () => {
             <Switch colorScheme="green" checked={colorMode === "dark"} onChange={toggleColorMode} />
             <Text>DarkMode</Text>
         </HStack>
-    )
-}
+    );
+};
 
-export default ColorModeSwitch
+export default ColorModeSwitch;
