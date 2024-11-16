@@ -10,7 +10,7 @@ interface Props {
 
 const GenreList = ({ selectedGenre, onSelectedGenre }: Props) => {
     const { data, isLoading, error } = useGenres();
-
+    console.log(data);
     if (error) return null;
 
     const skeletons = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -20,7 +20,7 @@ const GenreList = ({ selectedGenre, onSelectedGenre }: Props) => {
             <Heading fontSize="2xl" marginBottom={3}>Genres</Heading>
             <List.Root variant="plain" gap="2" >
                 {isLoading && skeletons.map(i => <GenreListSkeleton key={i} />)}
-                {data.map(genre =>
+                {data?.results.map(genre =>
                     <List.Item
                         key={genre.id}
                     >
