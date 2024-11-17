@@ -1,3 +1,4 @@
+import usePlatform from '@/hooks/usePlatform'
 import usePlatforms, { Platform } from '@/hooks/usePlatforms'
 import { BsChevronDown } from 'react-icons/bs'
 import { Button } from './ui/button'
@@ -11,7 +12,8 @@ interface Props {
 const PlatformSelector = ({ onSelectPlatform, selectedPlatformId }: Props) => {
     const { data, error } = usePlatforms();
 
-    const selectedPlatform = data?.results.find(platform => platform.id === selectedPlatformId);
+    const selectedPlatform = usePlatform(selectedPlatformId);
+
     if (error) return null;
 
     return (
