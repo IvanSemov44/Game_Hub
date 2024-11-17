@@ -5,10 +5,10 @@ import GenreListSkeleton from './GenreListSkeleton';
 
 interface Props {
     onSelectedGenre: (genre: Genre) => void;
-    selectedGenre: Genre | null;
+    selectedGenreId?: number;
 }
 
-const GenreList = ({ selectedGenre, onSelectedGenre }: Props) => {
+const GenreList = ({ selectedGenreId, onSelectedGenre }: Props) => {
     const { data, isLoading, error } = useGenres();
 
     if (error) return null;
@@ -37,7 +37,7 @@ const GenreList = ({ selectedGenre, onSelectedGenre }: Props) => {
                                 textAlign="left"
                                 variant="plain"
                                 onClick={() => onSelectedGenre(genre)}
-                                fontWeight={genre.id === selectedGenre?.id ? "bold" : "normal"}
+                                fontWeight={genre.id === selectedGenreId ? "bold" : "normal"}
                             >{genre.name}</Button>
                         </HStack>
                     </List.Item>

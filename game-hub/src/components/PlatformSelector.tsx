@@ -1,16 +1,17 @@
-import { Platform } from '@/hooks/useGames'
-import usePlatforms from '@/hooks/usePlatforms'
+import usePlatforms, { Platform } from '@/hooks/usePlatforms'
 import { BsChevronDown } from 'react-icons/bs'
 import { Button } from './ui/button'
 import { MenuContent, MenuItem, MenuRoot, MenuTrigger } from './ui/menu'
 
 interface Props {
     onSelectPlatform: (platform: Platform) => void
-    selectedPlatform: Platform | null;
+    selectedPlatformId?: number;
 }
 
-const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: Props) => {
+const PlatformSelector = ({ onSelectPlatform, selectedPlatformId }: Props) => {
     const { data, error } = usePlatforms();
+
+    const selectedPlatform = data?.results.find(platform => platform.id === selectedPlatformId);
     if (error) return null;
 
     return (
