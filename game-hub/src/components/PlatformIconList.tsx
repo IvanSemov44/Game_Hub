@@ -1,4 +1,4 @@
-import { Platform } from "@/entities/Platform";
+import Platform from "@/entities/Platform";
 import { HStack } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 import { BsGlobe } from "react-icons/bs";
